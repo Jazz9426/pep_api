@@ -1,7 +1,7 @@
 const verifyArgs= require("./verifyArgs")
 
 function petRegister(req, res, next){
-    if (!verifyArgs(req.body,[ "name", "age", "address", "phoneNumber", "clinicNumber", "tag" ])){
+    if (!verifyArgs(req.body,[ "name", "birth", "address", "phoneNumber", "clinicNumber", "tag" ])){
         res.status(400).send("Bad Request")
         return
     }
@@ -26,7 +26,7 @@ function petListFind(req, res, next){
 }
 
 function petPut(req, res, next){
-    if (!verifyArgs(req.body,["name", "age", "address", "phoneNumber", "clinicNumber", "description", "tag" ])){
+    if (!verifyArgs(req.body,["name", "birth", "address", "phoneNumber", "clinicNumber", "description", "tag" ])){
         res.status(400).send("Bad Request")
         return
     }

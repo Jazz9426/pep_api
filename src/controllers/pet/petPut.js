@@ -12,7 +12,7 @@ function petPut (req, res){
 
         if (results[0].userId != req.userId)
             return res.status(401).send("cannot modify another user's pets")
-            const sql = `UPDATE pets SET name = '${req.body.name}', age = '${req.body.age}', address = '${req.body.address}', clinicNumber = '${req.body.clinicNumber}', phoneNumber = '${req.body.phoneNumber}', description = '${req.body.description}', tag = '${req.body.tag}' WHERE id = ${req.query.id}`
+            const sql = `UPDATE pets SET name = '${req.body.name}', birth = '${req.body.birth.slice(0, 10)}', address = '${req.body.address}', clinicNumber = '${req.body.clinicNumber}', phoneNumber = '${req.body.phoneNumber}', description = '${req.body.description}', tag = '${req.body.tag}' WHERE id = ${req.query.id}`
             console.log(sql)
 
             db.query(sql, {}, (err, results) => {
